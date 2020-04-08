@@ -1,0 +1,39 @@
+name: 'check-scenarios'
+on:
+  push
+    
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Extract branch name variable
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+      - name: Set env name from branch name
+        uses: allenevans/set-env@v1.0.0
+        with:
+          BRANCH: ${{ steps.extract_branch.outputs.branch }}
+
+      - uses: actions/checkout@v2
+
+      - name: build action
+        run: |
+          yarn
+          yarn build:all
+
+      - name: Check for new scenario changes
+        uses: ./sample-action-1
+        id: check_repo
+        with:
+          environment: dev
+
+      - name: Create PR from dev to stage
+        uses: peter-evans/create-pull-request@v2
+        if: steps.check_repo.outputs.repoHasChanges == 'true'
+        with:
+          branch: dev
+          labels: automated
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: 'changes found in DEV'

@@ -1,0 +1,13 @@
+name: 'sample-action-1'
+description: 'Provide a description here'
+author: 'Your name or organization here'
+inputs:
+  environment:
+    required: true
+    description: 'environment name'
+outputs:
+  repoHasChanges:
+    description: 'true if scenarios have been changed since last commit'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

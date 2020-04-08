@@ -1,0 +1,25 @@
+{
+  "name": "sample-action-1",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "author": "Andy Cunningham <andycunn@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andycmaj/typescript-github-actions.git"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "yarn clean && yarn tsc --build && yarn ncc build src/main.ts -o dist",
+    "dev": "babel-node --root-mode upward --ignore ./node_modules --extensions \".ts,.tsx,.js,.jsx\" src/main.ts"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.3",
+    "@actions/exec": "^1.0.3",
+    "jsonwebtoken": "^8.5.1",
+    "md5": "^2.2.1",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
+}
