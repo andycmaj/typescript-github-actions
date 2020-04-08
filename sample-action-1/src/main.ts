@@ -14,7 +14,7 @@ const checkForChanges = async (): Promise<boolean> => {
   };
   options.cwd = '.';
 
-  await exec('git', ['status', '-s', './scenarios/latest.json'], options);
+  await exec('git', ['status', '-s'], options);
 
   return !!myOutput.trim();
 };
