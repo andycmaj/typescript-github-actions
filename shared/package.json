@@ -9,8 +9,6 @@
     "@actions/exec": "^1.0.3",
     "jsonwebtoken": "^8.5.1",
     "node-fetch": "^2.6.0"
-  },
-  "devDependencies": {
-    "typescript": "^3.8.3"
   }
+
 }

@@ -18,8 +18,5 @@
     "jsonwebtoken": "^8.5.1",
     "md5": "^2.2.1",
     "node-fetch": "^2.6.0"
-  },
-  "devDependencies": {
-    "typescript": "^3.8.3"
   }
 }

@@ -7,10 +7,11 @@
     "sample-action-1"
   ],
   "scripts": {
-    "build:all": "yarn build:check",
-    "build:check": "yarn workspace sample-action-1 build",
-    "pack:check": "yarn workspace sample-action-1 package",
-    "dev:check": "yarn workspace sample-action-1 dev",
+    "postinstall": "yarn build:all",
+    "build:all": "yarn build:sample-action-1",
+    "build:sample-action-1": "yarn workspace sample-action-1 build",
+    "pack:sample-action-1": "yarn workspace sample-action-1 package",
+    "dev:sample-action-1": "yarn workspace sample-action-1 dev",
     "shared": "yarn workspace shared"
   },
   "devDependencies": {
