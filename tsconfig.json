@@ -1,4 +1,5 @@
 {
+  "files": [],
   "compilerOptions": {
     /* Basic Options */
     "target": "es5",
@@ -15,5 +16,8 @@
     /* Advanced Options */
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
-  }
+  },
+  "references": [
+    { "path": "packages" },
+  ]
 }

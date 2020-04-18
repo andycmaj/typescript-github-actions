@@ -1,7 +1,7 @@
 import * as core from '@actions/core';
 import { exec } from '@actions/exec';
 import { ExecOptions } from '@actions/exec/lib/interfaces';
-import { getConfig } from 'shared';
+import { getConfig } from '@typescript-github-actions-template/shared';
 
 const checkForChanges = async (): Promise<boolean> => {
   let myOutput = '';

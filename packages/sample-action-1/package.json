@@ -1,5 +1,5 @@
 {
-  "name": "sample-action-1",
+  "name": "@typescript-github-actions-template/sample-action-1",
   "version": "0.0.1",
   "main": "dist/index.js",
   "author": "Andy Cunningham <andycunn@gmail.com>",
@@ -13,6 +13,7 @@
     "dev": "babel-node --root-mode upward --ignore ./node_modules --extensions \".ts,.tsx,.js,.jsx\" src/main.ts"
   },
   "dependencies": {
+    "@typescript-github-actions-template/shared": "1.0.0",
     "@actions/core": "^1.2.3",
     "@actions/exec": "^1.0.3",
     "jsonwebtoken": "^8.5.1",

@@ -3,15 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "workspaces": [
-    "shared",
-    "sample-action-1"
+    "packages/*"
   ],
   "scripts": {
     "postinstall": "yarn build:all",
     "build:all": "yarn build:sample-action-1",
-    "build:sample-action-1": "yarn workspace sample-action-1 build",
-    "pack:sample-action-1": "yarn workspace sample-action-1 package",
-    "dev:sample-action-1": "yarn workspace sample-action-1 dev",
+    "build:sample-action-1": "yarn workspace @typescript-github-actions-template/sample-action-1 build",
+    "pack:sample-action-1": "yarn workspace @typescript-github-actions-template/sample-action-1 package",
+    "dev:sample-action-1": "yarn workspace @typescript-github-actions-template/sample-action-1 dev",
     "shared": "yarn workspace shared"
   },
   "devDependencies": {
